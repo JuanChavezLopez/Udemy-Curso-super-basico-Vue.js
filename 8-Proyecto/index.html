@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="bulma.min.css" rel="stylesheet" />
+  </head>
+  <style>
+    .titles {
+      text-align: center;
+      font-size: 50px;
+    }
+  </style>
+
+  <body>
+    <h1 class="titles" style="color: white; background-color: green;">VUE.JS - PROOJECT OF IDEAS</h1>
+
+    <div id="app" style="padding: 2em">
+
+      <section class="hero">
+        <div class="hero-body">
+          <p class="title">My ideas</p>
+          <p class="subtitle">Project Super Vue</p>
+        </div>
+      </section>
+
+      <div class="columns">
+        <div class="column">
+          <section class="hero">
+            <div class="hero-body">
+              <p class="subtitle">Registrar Idea</p>
+              <div class="field">
+                <label class="label">Idea</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Ingrese idea" v-model="idea_txt"/>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Prioridad</label>
+                <div class="control">
+                  <div class="select">
+                    <select v-model="prioridad">
+                      <option value="N">Normal</option>
+                      <option value="I">Important</option>
+                      <option value="IM">Very Important</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="buttons">
+                <button @click="agregarIdea()" class="button is-success">Add</button>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="column">
+          <section class="hero">
+            <div class="hero-body">
+              <p class="subtitle">List ideas</p>
+            </div>
+            <div class="field">
+              <div class="control">
+                <input class="input" type="text" placeholder="Buscar Idea" />
+              </div>
+            </div>
+            <table>
+              <thead>
+                <th>Idea</th>
+                <th>Prioridad</th>
+                <th>Acciones</th>
+              </thead>
+              <tbody>
+                <tr v-for="i in lista_ideas">
+                  <td>{{ i.idea }}</td>
+                  <td>
+                      <span v-if="i.prioridad === 'N' " class="tag is-info">Normal</span>
+                      <span v-else-if="i.prioridad === 'I' " class="tag is-warning">Important</span>
+                      <span class="tag is-success">Very Important</span>
+                  </td>
+                  <td><button  class="button is-danger">Delete</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript" src="practica.js"></script>
+  </body>
+</html>

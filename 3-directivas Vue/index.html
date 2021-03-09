@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+        <h1 style="color:green;">APRENDIENDO VUE</h1>
+        <div id="app">
+           <p>{{ saludar }}</p>
+
+           <!-- LA DIRECTIVA SOLO FUNCIONA SI v-show ESTA DENTRO Y ES TRUE, EN LA INSTANCIA VUE.JS -->
+           <h3 style="color:red;">DIRECTIVA -----> v-show</h1>
+           <p v-show="numero <= 10">Texto solo si activo = true</p>
+
+           <h3 style="color:red;">DIRECTIVA ---> v-if - condicional</h3>
+           <p v-if="activo === true">Si es activo</p>
+           <p v-else>No es activo</p>
+
+           <h3 style="color:red;">DIRECTIVA -------> V-FOR---> DIRECTIVAS PARA SENTENCIAS REPETITIVAS</h3>
+
+           <ul>
+               <li v-for="numero in lista"> Numero: {{ numero }}</li>
+               <li v-for="n in 5" :key="n"> Numero: {{ n }}</li>
+           </ul>
+
+           <h3 style="color:red;">DIRECTIVA -------> v-html----->DIRECTIVA PARA PINTAR html</h3>
+           <p v-html="blog"></p>
+        </div>
+
+        <!-- <h3>DIRECTIVAS VUE.JS</h3> -->
+
+
+
+        <script type="text/javascript" src="vue.js"></script>
+        <script type="text/javascript" src="practica.js"></script>
+       
+    </body>
+</html>

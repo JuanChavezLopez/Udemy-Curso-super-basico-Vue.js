@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <style>
+        .color_red {
+            color:red;
+        }
+
+        .color_verde {
+            color: green;
+        }
+    </style>
+    <body>
+        
+        <h1 style="color:green;">APRENDIENDO VUE</h1>
+       
+        <div id="app2">
+            <h1 style="color:red;">PROPIEDADES DE VUE.JS</h1>
+            <input type="number" v-model="num1">
+            <input type="number" v-model="num2">
+            <button @click="sumarNumero()" type="">Sumar</button>
+            <p>{{ sumarNumeros }}</p>  <!-- usamos propiedad computada, solo ejecuta una vez y lo guarda en cache -->
+            <p>{{ sumarNumero() }}</p>
+        </div>
+
+        <script type="text/javascript" src="vue.js"></script>
+        <script type="text/javascript" src="practica.js"></script>
+       
+    </body>
+</html>

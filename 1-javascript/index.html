@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+        <h1 id="titulo1">Introducccion al curso</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, amet aspernatur. Quibusdam at suscipit perspiciatis. Sit totam consequuntur id laboriosam architecto odio. Cum velit dolorum sequi eaque ducimus. Autem, voluptatibus?</p>
+        <button onclick="saludar2()">Click aqui</button>
+        <p></p>
+        <input id="txt1" type="text">
+        <button onclick="limpiar()" type="">Limpiar</button>
+        <p></p>
+        <div id="app">
+
+        </div>
+
+        <button onclick="listarFrutas()">Listar</button>
+
+
+        <script>
+            function saludar(mensaje) {
+                console.log(mensaje);
+            };
+
+            function saludar2() {
+                console.log('saludando desde el boton html');
+                var elementoH1 = document.getElementById('titulo1');
+                elementoH1.innerHTML= 'CAMBIADO DESDE UNA FUNCION DE JAVASCRIPT, ESPEZAMOS CON FUERZA CON VUE.JS';
+            };
+
+            function limpiar() {
+                var limpiar = document.getElementById('txt1');
+                limpiar.value ="";
+            };
+
+            function listarFrutas() {
+                var frutas =['manzana', 'pera', 'naranja', 'durazno'];
+
+                var lista = document.createElement('ul');
+
+                var i;
+                for (i =0; i<frutas.length; i++) {
+                    var li = document.createElement('li');
+                    li.textContent = frutas[i];
+                    lista.appendChild(li);
+                }
+
+                var app = document.querySelector('#app');
+                app.appendChild(lista);
+
+                // var h2 = document.createElement('h2');
+                // h2.innerHTML = 'SUBTITULO';
+
+                // var app = document.querySelector('#app');
+                // app.appendChild(h2);
+
+            }
+        </script>
+    </body>
+</html>
