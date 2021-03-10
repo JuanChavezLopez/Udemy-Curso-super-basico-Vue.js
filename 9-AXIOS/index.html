@@ -96,9 +96,40 @@
           </section>
         </div>
       </div>
+
+      <section class="hero">
+        <div class="hero-body">
+          <p class="title">AXIOS - MY IDEAS FROM SERVER</p>
+          <p class="subtitle">Project Super Vue</p>
+          <button type="" @click="cargarDatosServidor()" class="button is-success">Cargar Datos Servidor</button>
+
+          <table>
+            <thead>
+              <th>Idea</th>
+              <th>Prioridad</th>
+              <th>Acciones</th>
+            </thead>
+            <tbody>
+              <!-- bucle for - recorre array de elementos y los almacena en la variable "i" -->
+              <tr v-for="i in lista_ideas_servidor">
+                <td>{{ i.name }}</td>
+                <td>
+                  <span v-if="i.prioridad === 'N' " class="tag is-info">Normal</span
+                  >
+                  <span v-else-if="i.prioridad === 'I' " class="tag is-warning">Important</span
+                  >
+                  <span v-else class="tag is-success">Very Important</span>
+                </td>
+                <td><button class="button is-danger is-light" @click="eliminarIdea(i.id)">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
 
     <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript" src="axios.min.js"></script>
     <script type="text/javascript" src="practica.js"></script>
   </body>
 </html>

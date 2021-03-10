@@ -8,7 +8,8 @@ new Vue({
             {'id':1, 'idea':'Mi segunda idea', 'prioridad':'I'},
             {'id':2, 'idea':'Mi tercera idea', 'prioridad':'IM'},
         ],
-        search_txt: ''
+        search_txt: '',
+        lista_ideas_servidor: []
     
     },
     watch: {
@@ -39,6 +40,17 @@ new Vue({
         eliminarIdea:  function(idea_id) {
             let index = this.lista_ideas.findIndex( e => e.id === idea_id);
             this.lista_ideas.splice(index,1);
+        }, 
+        cargarDatosServidor: function() {
+            var self = this
+
+            // accios a generado su propia isntancia..y el thsi..ya no nos funciona correctamente
+            axios.get('https://servicios.neunapp.com/api/tienda/categorias/lista/').then(
+                function(response) {
+                    console.log(response.data);
+                    self.lista_ideas_servidor = response.data;
+                }
+            )
         }
     }
 
